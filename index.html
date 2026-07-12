@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياد القابضة | نبتكر ونقود المستقبل في قطاع الخدمات والضيافة</title>
+    <!-- خط Cairo لتناسق الخطوط العربية -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- مكتبة FontAwesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* المتغيرات اللونية بناءً على هوية البراند */
+        :root {
+            --primary-dark: #222222; /* الرمادي الداكن الفحمي */
+            --primary-light: #2A2A2A; /* رمادي متوسط */
+            --gold: #C5A059; /* الذهبي البرونزي */
+            --gold-hover: #b08d4b;
+            --white: #ffffff;
+            --bg-light: #fdfdfd;
+            --bg-dark-section: #1a1a1a;
+            --text-dark: #333333;
+            --text-muted: #666666;
+            --border-color: #f0f0f0;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* الإعدادات العامة للموقع */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-shadow: none;
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-smooth);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-padding {
+            padding: 70px 0;
+        }
+
+        /* العناوين الرئيسية للأقسام */
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--gold);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            max-width: 650px;
+            margin: 0 auto 40px;
+        }
+
+        /* الأزرار التفاعلية */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            gap: 8px;
+            border: none;
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--white);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--gold);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* ------------------------------------------------------------- */
+        /* الهيدر وقائمة التنقل */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            height: 100%;
+        }
+
+        .nav-item {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-link:hover, .nav-item:hover .nav-link {
+            color: var(--gold);
+        }
+
+        /* الميجا منيو المخصصة لأجهزة الكمبيوتر */
+        .mega-menu {
+            position: absolute;
+            top: 80px;
+            right: 50%;
+            transform: translateX(50%) translateY(20px);
+            width: 820px;
+            background-color: var(--white);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--gold);
+            border-radius: 0 0 8px 8px;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1001;
+        }
+
+        .nav-item:hover .mega-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(50%) translateY(0);
+        }
+
+        .mega-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 6px;
+            transition: var(--transition-smooth);
+        }
+
+        .mega-item:hover {
+            background-color: var(--bg-light);
+            transform: scale(1.02);
+        }
+
+        .mega-icon {
+            font-size: 1.3rem;
+            color: var(--gold);
+            background-color: rgba(197, 160, 89, 0.1);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        .mega-content h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 3px;
+        }
+
+        .mega-content p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lang-switch {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .lang-switch:hover {
+            color: var(--gold);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            cursor: pointer;
+        }
+
+        /* ------------------------------------------------------------- */
+        /* قسم الواجهة الرئيسية (Hero Section) */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(34, 34, 34, 0.82), rgba(34, 34, 34, 0.82)), url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            height: 70vh;
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            background-color: rgba(197, 160, 89, 0.15);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: #e0e0e0;
+            margin-bottom: 30px;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        /* ------------------------------------------------------------- */
+        /* قسم من نحن وركائز الضيافة المتكاملة */
+        .intro-section {
+            background-color: var(--white);
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .intro-text h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .intro-text .highlight-text {
+            color: var(--gold);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .intro-text p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        /* حلقة منظومة الخدمات الدائرية المتصلة للركائز الستة */
+        .eco-cycle-container {
+            background-color: var(--bg-light);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .eco-cycle-title {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .eco-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .eco-step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--white);
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+        }
+
+        .eco-step:hover {
+            border-color: var(--gold);
+            transform: scale(1.01);
+        }
+
+        .eco-step-num {
+            width: 32px;
+            height: 32px;
+            background-color: var(--primary-dark);
+            color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .eco-step-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .eco-step-text h5 {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin: 0;
+        }
+
+        @media (min-width: 769px) {
+            .eco-step-text h5 {
+                white-space: nowrap; 
+            }
+        }
+
+        .eco-step-text p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* ------------------------------------------------------------- */
+        /* قسم الخدمات والبطاقات التفاعلية (مع توجيه استكشافي وتعريفي متكامل) */
+        .services-section {
+            background-color: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--gold);
+        }
+
+        .service-img {
+            height: 140px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .service-icon-floating {
+            position: absolute;
+            bottom: -15px;
+            left: 15px;
+            width: 38px;
+            height: 38px;
+            background-color: var(--gold);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            box-shadow: 0 3px 8px rgba(197, 160, 89, 0.3);
+            border: 3px solid var(--white);
+        }
+
+        .service-info {
+            padding: 22px 18px 18px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-info h3 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .service-info p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .service-link {
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: var(--gold);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            width: fit-content;
+        }
+
+        .service-link:hover {
+            color: var(--primary-dark);
+        }
+
+        .show-more-services-btn-container {
+            display: none;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        /* العدادات الرقمية للموقع */
+        .mid-stats-section {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 50px 0;
+            border-top: 3px solid var(--gold);
+        }
+
+        .mid-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .mid-stat-num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .mid-stat-label {
+            font-size: 0.88rem;
+            color: #dddddd;
+        }
+
+        /* ------------------------------------------------------------- */
+        /* السلايدرات التفاعلية والأسهم اليدوية للعلامات */
+        .slider-section-container {
+            position: relative;
+            padding: 50px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .slider-outer-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .slider-track-container {
+            width: 100%;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;  
+            scrollbar-width: none;  
+        }
+
+        .slider-track-container::-webkit-scrollbar {
+            display: none; 
+        }
+
+        .slider-track {
+            display: flex;
+            gap: 20px;
+            padding: 10px 5px;
+        }
+
+        /* أزرار الأسهم الجانبية للتحكم يدويّاً */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 38px;
+            height: 38px;
+            background-color: var(--white);
+            border: 1px solid #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+            transition: var(--transition-smooth);
+            color: var(--primary-dark);
+            font-size: 0.9rem;
+        }
+
+        .slider-arrow:hover {
+            background-color: var(--gold);
+            color: var(--white);
+            border-color: var(--gold);
+        }
+
+        .slider-arrow.prev {
+            right: -18px;
+        }
+
+        .slider-arrow.next {
+            left: -18px;
+        }
+
+        .brand-item-logo {
+            flex-shrink: 0;
+            width: 150px;
+            height: 75px;
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .brand-item-logo:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(197, 160, 89, 0.08);
+        }
+
+        .brand-item-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.75;
+            transition: var(--transition-smooth);
+        }
+
+        .brand-item-logo:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .partner-item-badge {
+            flex-shrink: 0;
+            width: 150px;
+            height: 75px;
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+            color: var(--primary-dark);
+        }
+
+        .partner-item-badge:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        /* ------------------------------------------------------------- */
+        /* قسم محاور التميز والالتزام بالرؤية */
+        .initiatives-section {
+            background-color: var(--white);
+        }
+
+        .initiatives-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .initiative-card {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px 20px;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .initiative-card:hover {
+            border-color: var(--gold);
+            background-color: var(--white);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            transform: translateY(-3px);
+        }
+
+        .init-icon {
+            width: 45px;
+            height: 45px;
+            background-color: rgba(197, 160, 89, 0.1);
+            color: var(--gold);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .initiative-card h4 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .initiative-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ------------------------------------------------------------- */
+        /* تصميم قسم آراء وعملاء شركتنا المحدث (B2B Testimonials) */
+        .testimonials-section {
+            background-color: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(197, 160, 89, 0.05);
+        }
+
+        .quote-icon {
+            font-size: 2rem;
+            color: rgba(197, 160, 89, 0.15);
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .testimonial-text {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+
+        .author-avatar {
+            width: 38px;
+            height: 38px;
+            background-color: var(--border-color);
+            color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .author-info h5 {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .author-info span {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+
+        /* ------------------------------------------------------------- */
+        /* قسم الشراكة واستقطاب الاستثمارات */
+        .lead-section {
+            background: linear-gradient(rgba(34, 34, 34, 0.92), rgba(34, 34, 34, 0.92)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            color: var(--white);
+        }
+
+        .lead-grid {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .lead-info h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .lead-info p {
+            color: #cccccc;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .lead-features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .lead-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+        }
+
+        .lead-feature-item i {
+            color: var(--gold);
+        }
+
+        /* النموذج المخصص للشراكات الاستراتيجية */
+        .lead-form-container {
+            background-color: var(--white);
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            color: var(--text-dark);
+        }
+
+        .lead-form-container h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .form-group-full {
+            grid-column: span 2;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #dcdcdc;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            outline: none;
+            transition: var(--transition-smooth);
+            background-color: var(--white);
+        }
+
+        .form-control:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+        }
+
+        textarea.form-control {
+            height: 80px;
+            resize: none;
+        }
+
+        /* ------------------------------------------------------------- */
+        /* الفوتر (تم تحديث مسمى هذا القسم ليتماشى مع استراتيجية البراند أوارنيس) */
+        footer {
+            background-color: var(--primary-dark);
+            color: #cccccc;
+            padding: 60px 0 25px;
+            border-top: 5px solid var(--gold);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: var(--gold);
+            margin-top: 6px;
+        }
+
+        .footer-about p {
+            font-size: 0.8rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #b0b0b0;
+        }
+
+        .footer-logo-container {
+            background-color: var(--white);
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo-container img {
+            height: 42px;
+            width: auto;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-btn {
+            width: 35px;
+            height: 35px;
+            background-color: var(--primary-light);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .social-btn:hover {
+            background-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            font-size: 0.8rem;
+            color: #b0b0b0;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            transform: translateX(-4px);
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 0.8rem;
+            color: #b0b0b0;
+        }
+
+        .footer-contact i {
+            color: var(--gold);
+            font-size: 1rem;
+            margin-top: 2px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--primary-light);
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            color: #777777;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--gold);
+        }
+
+        /* ------------------------------------------------------------- */
+        /* استجابة الموقع للهواتف */
+        @media (max-width: 1024px) {
+            .mega-menu {
+                width: 95%;
+                right: 2.5%;
+                transform: translateY(15px);
+            }
+            .services-grid, .initiatives-grid, .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 40px 0;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+            .section-subtitle {
+                font-size: 0.85rem;
+                margin-bottom: 25px;
+            }
+            .mobile-toggle {
+                display: block;
+            }
+            .nav-container {
+                height: 70px;
+            }
+            .logo img {
+                height: 42px;
+            }
+            .nav-menu {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.04);
+                display: none;
+                border-top: 1px solid var(--border-color);
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .nav-item {
+                width: 100%;
+                justify-content: center;
+                height: auto;
+                padding: 8px 0;
+            }
+            .mega-menu {
+                position: static;
+                transform: none !important;
+                width: 100%;
+                box-shadow: none;
+                border: none;
+                grid-template-columns: 1fr;
+                display: none;
+                padding: 10px 20px;
+            }
+            .nav-item.open-mobile .mega-menu {
+                display: grid;
+            }
+            .intro-grid, .lead-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .initiatives-grid, .testimonials-grid, .footer-grid, .mid-stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 1.6rem;
+            }
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+            .hero-actions {
+                flex-direction: column;
+                padding: 0 10px;
+                gap: 10px;
+            }
+            .btn {
+                width: 100%;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-group-full {
+                grid-column: span 1;
+            }
+
+            /* --- نظام الأكورديون الذكي المتوافق مع الجوال بدون تعديل البنية الأساسية للـ HTML --- */
+            .eco-steps {
+                gap: 8px;
+            }
+            .eco-step {
+                cursor: pointer;
+                position: relative;
+            }
+            .eco-step::after {
+                content: '\f078';
+                font-family: 'Font Awesome 6 Free';
+                font-weight: 900;
+                margin-right: auto;
+                font-size: 0.75rem;
+                color: var(--gold);
+                transition: transform 0.3s ease;
+                padding-left: 10px;
+            }
+            .eco-step.active::after {
+                transform: rotate(180deg);
+            }
+            /* تقليص وعرض الوصف تلقائياً بالجوال */
+            .eco-step p {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), margin-top 0.3s ease;
+                margin-top: 0;
+            }
+            .eco-step.active p {
+                max-height: 120px;
+                margin-top: 6px;
+            }
+
+            /* --- تقليص كروت الخدمات للجوال --- */
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .service-card {
+                display: none;
+            }
+            .service-card.show-mobile {
+                display: flex !important;
+            }
+            .service-card.expanded {
+                display: flex !important;
+                animation: fadeInDown 0.4s ease;
+            }
+            .show-more-services-btn-container {
+                display: flex;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر والناف بار -->
+    <header>
+        <div class="container nav-container">
+            <!-- شعار الشركة الفعلي المدمج رسمياً -->
+            <a href="#" class="logo">
+                <img src="https://i.ibb.co/HLCj7V2H/image.png" alt="سياد القابضة | SIAD Holding">
+            </a>
+
+            <!-- أيقونة قائمة الهامبرغر للجوال -->
+            <div class="mobile-toggle" id="mobile-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link">الرئيسية</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">من نحن</a></li>
+                
+                <!-- الميجا منيو للخدمات -->
+                <li class="nav-item" id="services-nav-item">
+                    <a href="#" class="nav-link" id="services-dropdown-link">خدماتنا <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-right: 2px;"></i></a>
+                    <div class="mega-menu">
+                        <a href="#services" class="mega-item">
+                            <div class="mega-icon"><i class="fa-solid fa-hotel"></i></div>
+                            <div class="mega-content">
+                                <h4>الضيافة الفندقية</h4>
+                                <p>إدارة وتشغيل الفنادق الراقية بمجاورة المشاعر المقدسة وفي أرقى الوجهات.</p>
+                            </div>
+                        </a>
+                        <a href="#services" class="mega-item">
+                            <div class="mega-icon"><i class="fa-solid fa-utensils"></i></div>
+                            <div class="mega-content">
+                                <h4>الإعاشة والتموين</h4>
+                                <p>حلول إطعام متكاملة، وجبات مبتكرة، وتوزيع مواد غذائية عالية الجودة.</p>
+                            </div>
+                        </a>
+                        <a href="#services" class="mega-item">
+                            <div class="mega-icon"><i class="fa-solid fa-kaaba"></i></div>
+                            <div class="mega-content">
+                                <h4>الحج والعمرة والوجهات</h4>
+                                <p>باقات شاملة، خدمات أرضية متكاملة، وإدارة الوجهات لضيوف الرحمن.</p>
+                            </div>
+                        </a>
+                        <a href="#services" class="mega-item">
+                            <div class="mega-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+                            <div class="mega-content">
+                                <h4>المشاريع والتطوير والاستشارات</h4>
+                                <p>استشارات ضيافة، دراسات جدوى، وحلول متكاملة تمنح "راحة البال".</p>
+                            </div>
+                        </a>
+                        <a href="#services" class="mega-item">
+                            <div class="mega-icon"><i class="fa-solid fa-bus"></i></div>
+                            <div class="mega-content">
+                                <h4>النقل السياحي واللوجستي</h4>
+                                <p>خدمات نقل راقٍ ومفصلة لقطاع الأعمال ووفود الرحمن بأسطول زائر الحديث.</p>
+                            </div>
+                        </a>
+                        <a href="#services" class="mega-item">
+                            <div class="mega-icon"><i class="fa-solid fa-plane-departure"></i></div>
+                            <div class="mega-content">
+                                <h4>حجوزات السفر والمنصات</h4>
+                                <p>منصات سفر سريعة وحلول ذكية لحجوزات الطيران وتأشيرات الإقامة.</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="nav-item"><a href="#" class="nav-link">محفظتنا</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">تاريخنا</a></li>
+                <li class="nav-item"><a href="#initiatives" class="nav-link">أخبارنا</a></li>
+            </ul>
+
+            <div class="nav-left">
+                <a href="#lead" class="btn btn-gold" style="padding: 8px 16px; font-size: 0.8rem;"><i class="fa-solid fa-handshake"></i> كن شريكاً</a>
+                <a href="#" class="lang-switch"><i class="fa-solid fa-globe"></i> EN</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- واجهة الموقع الرئيسية -->
+    <section class="hero">
+        <div class="container hero-content">
+            <span class="hero-badge">ريادة تشغيلية واستثمارية متكاملة الخدمات</span>
+            <h1 class="hero-title">سياد القابضة.. واجهتكم المتكاملة في قطاع الخدمات والضيافة</h1>
+            <p class="hero-subtitle">واجهتكم الشاملة في صناعة الضيافة؛ حيث تندمج حلول السفر الرقمية، والخدمات اللوجستية، والتسكين الفندقي الفاخر، والإعاشة، في منظومة واحدة متكاملة تُثري تجربة عملائنا وضيوف الرحمن من البداية وحتى النهاية.</p>
+            <div class="hero-actions">
+                <a href="#lead" class="btn btn-gold">فرص الاستثمار والشراكة</a>
+                <a href="#services" class="btn btn-outline" style="border-color: var(--white); color: var(--white);">استكشف منظومة خدماتنا</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- من نحن وركائز الضيافة المتكاملة (الهيكل البصري الأصلي المتكامل) -->
+    <section class="intro-section section-padding">
+        <div class="container intro-grid">
+            <div class="intro-text">
+                <span class="highlight-text">منصة موحدة ومكتملة الخدمات</span>
+                <h3>سلسلة قيم متكاملة ومترابطة تحت سقف واحد</h3>
+                <p>نحن في سياد القابضة لا نقدم مجرد خدمات منفردة، بل نبتكر للشركات والوفود والشركاء بنية تحتية متكاملة للضيافة؛ تتكامل فيها الاستشارات الهندسية وتطوير المشاريع، مع خدمات السفر والمنصات الرقمية، والنقل والعمليات اللوجستية، وصولاً إلى تشغيل الفنادق الراقية وخدمات الإعاشة المتميزة تحت مظلة قيادية واحدة.</p>
+                <a href="https://siadholding.com/wp-content/uploads/2026/06/2026_SIAD_company-profile_Arabic-presentation_A4.pdf" target="_blank" class="btn btn-outline"><i class="fa-solid fa-file-pdf"></i> تحميل ملف شركتنا</a>
+            </div>
+            
+            <!-- ركائز الرحلة الشاملة (6 ركائز بالهيكل الأصلي والمحكم) -->
+            <div class="eco-cycle-container">
+                <h4 class="eco-cycle-title"><i class="fa-solid fa-arrows-spin"></i> تكامل الخدمات: من التخطيط الرقمي حتى الوفادة</h4>
+                <div class="eco-steps" id="eco-accordion">
+                    
+                    <!-- ركيزة 1 -->
+                    <div class="eco-step active">
+                        <div class="eco-step-num">1</div>
+                        <div class="eco-step-text">
+                            <h5>حجوزات السفر والمنصات الرقمية (الحجوزات السريعة & ستايكسا)</h5>
+                            <p>تنظيم الرحلات وحجز الطيران وتوفير خيارات الإقامة الذكية.</p>
+                        </div>
+                    </div>
+
+                    <!-- ركيزة 2 -->
+                    <div class="eco-step">
+                        <div class="eco-step-num">2</div>
+                        <div class="eco-step-text">
+                            <h5>إدارة الوجهات وإصدار التأشيرات (الحسام للسياحة)</h5>
+                            <p>تنسيق كامل مسار الرحلة، وإصدار التأشيرات، وإدارة الوفود بحفاوة.</p>
+                        </div>
+                    </div>
+
+                    <!-- ركيزة 3 -->
+                    <div class="eco-step">
+                        <div class="eco-step-num">3</div>
+                        <div class="eco-step-text">
+                            <h5>النقل البري واللوجستيات (شركة زائر للنقل)</h5>
+                            <p>تحركات مريحة بأسطول حديث من الحافلات الفخمة والسيارات المجهزة.</p>
+                        </div>
+                    </div>
+
+                    <!-- ركيزة 4 -->
+                    <div class="eco-step">
+                        <div class="eco-step-num">4</div>
+                        <div class="eco-step-text">
+                            <h5>التسكين والضيافة الفندقية الراقية (سجى ورويك & أنوار المدينة موفنبيك)</h5>
+                            <p>إقامة هادئة في كنف الحرمين الشريفين وفي أرقى الوجهات السكنية والمراكز التجارية.</p>
+                        </div>
+                    </div>
+
+                    <!-- ركيزة 5 -->
+                    <div class="eco-step">
+                        <div class="eco-step-num">5</div>
+                        <div class="eco-step-text">
+                            <h5>الإعاشة والتموين والأغذية (الحسام للتغذية)</h5>
+                            <p>تجراب طعام استثنائية وبوفيهات تموين متكاملة تروق للأذواق المتعددة.</p>
+                        </div>
+                    </div>
+
+                    <!-- ركيزة 6 -->
+                    <div class="eco-step">
+                        <div class="eco-step-num">6</div>
+                        <div class="eco-step-text">
+                            <h5>الاستشارات وتطوير المشاريع (سجى لحلول الضيافة)</h5>
+                            <p>تقديم دراسات جدوى، إدارة مناقصات، وهندسة قيمية لتقليل مخاطر التشغيل وتوفير راحة البال للشركاء.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الخدمات الرئيسية للشركة القابضة مع توجيه صريح مباشر للمنصات التشغيلية لزيادة التحويل -->
+    <section class="services-section section-padding" id="services">
+        <div class="container">
+            <h2 class="section-title">مجالات خدماتنا الرئيسية</h2>
+            <p class="section-subtitle">نوفر خدمات متكاملة تغطي كافة تطلعات المستثمرين والنزلاء في قطاع الضيافة والسياحة الدينية والترفيهية.</p>
+            
+            <div class="services-grid" id="services-grid">
+                
+                <!-- خدمة 1: الضيافة الفندقية توجّه لموفنبيك وسجى -->
+                <div class="service-card show-mobile">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=600')">
+                        <div class="service-icon-floating"><i class="fa-solid fa-hotel"></i></div>
+                    </div>
+                    <div class="service-info">
+                        <h3>الضيافة الفندقية</h3>
+                        <p>نوجه فنادق رائدة مثل "فنادق سجى ورويك" و"أنوار المدينة موفنبيك" لتقديم إقامات مريحة وفخمة بجوار الحرمين الشريفين.</p>
+                        <a href="https://siadholding.com/wp-content/uploads/2026/06/2026_SIAD_company-profile_Arabic-presentation_A4.pdf" target="_blank" class="service-link">اكتشف قطاع الضيافة الفندقية التابع للمجموعة ↗</a>
+                    </div>
+                </div>
+
+                <!-- خدمة 2: الإعاشة والتموين تتوجه لـ HFS -->
+                <div class="service-card show-mobile">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80&w=600')">
+                        <div class="service-icon-floating"><i class="fa-solid fa-utensils"></i></div>
+                    </div>
+                    <div class="service-info">
+                        <h3>الإعاشة والتموين</h3>
+                        <p>تضمن حلول "الحسام لخدمات التغذية" وتجارب مطاعمنا كـ "إكلة والمضيف" تمويناً غنياً وبوفيهات مدروسة بدقة وجودة عالية.</p>
+                        <a href="https://siadholding.com/wp-content/uploads/2026/06/2026_SIAD_company-profile_Arabic-presentation_A4.pdf" target="_blank" class="service-link">استكشف خدمات وحلول الإعاشة والتموين المتميزة ↗</a>
+                    </div>
+                </div>
+
+                <!-- خدمة 3: إدارة الوجهات لـ الحسام للسياحة -->
+                <div class="service-card show-mobile">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&q=80&w=600')">
+                        <div class="service-icon-floating"><i class="fa-solid fa-kaaba"></i></div>
+                    </div>
+                    <div class="service-info">
+                        <h3>الحج والعمرة وإدارة الوجهات</h3>
+                        <p>باقات وتسهيلات رصينة عبر "الحسام للسياحة" و"الحسام المحدودة" لدعم وتنسيق استقبال الوفود بأعلى مستويات الحفاوة السعودية.</p>
+                        <a href="https://siadholding.com/wp-content/uploads/2026/06/2026_SIAD_company-profile_Arabic-presentation_A4.pdf" target="_blank" class="service-link">استكشف قطاع الحج والعمرة وإدارة الوجهات ↗</a>
+                    </div>
+                </div>
+
+                <!-- خدمة 4: الاستشارات لـ سجى لحلول الضيافة -->
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=600')">
+                        <div class="service-icon-floating"><i class="fa-solid fa-compass-drafting"></i></div>
+                    </div>
+                    <div class="service-info">
+                        <h3>المشاريع والتطوير والاستشارات</h3>
+                        <p>تساعد "سجى لحلول الضيافة" المستثمرين على إدارة وتشغيل مشاريع الضيافة، مما يمنح عملائنا "راحة البال".</p>
+                        <a href="https://siadholding.com/wp-content/uploads/2026/06/2026_SIAD_company-profile_Arabic-presentation_A4.pdf" target="_blank" class="service-link">اكتشف ذراع الاستشارات وتطوير المشاريع الفندقية ↗</a>
+                    </div>
+                </div>
+
+                <!-- خدمة 5: النقل البري لـ زائر -->
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600')">
+                        <div class="service-icon-floating"><i class="fa-solid fa-bus"></i></div>
+                    </div>
+                    <div class="service-info">
+                        <h3>النقل البري واللوجستي</h3>
+                        <p>نوفر حلول تنقل راقية ومفصلة لقطاع الأعمال ووفود الرحمن بأسطول "شركة زائر للنقل" المتميز بحافلاته الفاخرة.</p>
+                        <a href="https://siadholding.com/wp-content/uploads/2026/06/2026_SIAD_company-profile_Arabic-presentation_A4.pdf" target="_blank" class="service-link">استكشف حلول النقل البري والخدمات اللوجستية ↗</a>
+                    </div>
+                </div>
+
+                <!-- خدمة 6: السفر والمنصات لـ ستايكسا وفاست بوكينج -->
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=600')">
+                        <div class="service-icon-floating"><i class="fa-solid fa-plane-departure"></i></div>
+                    </div>
+                    <div class="service-info">
+                        <h3>حجوزات السفر والمنصات</h3>
+                        <p>نسخر تقنيات منصتنا المبتكرة "Stayksa.com" وخدمات "الحجوزات السريعة" لتقديم تجربة حجز رقمية متكاملة وسهلة.</p>
+                        <a href="https://siadholding.com/wp-content/uploads/2026/06/2026_SIAD_company-profile_Arabic-presentation_A4.pdf" target="_blank" class="service-link">اكتشف منصات السفر وحلول الحجز الرقمي للمجموعة ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- زر تفاعلي لعرض كافة الخدمات للجوال -->
+            <div class="show-more-services-btn-container">
+                <button class="btn btn-outline" id="toggle-services-btn">عرض كافة الخدمات <i class="fa-solid fa-plus"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- سلايدر تفاعلي أفقي مزود بأسهم تحكم يدوية للعلامات التجارية التابعة لسياد القابضة -->
+    <div class="slider-section-container">
+        <div class="container">
+            <h2 class="section-title">علاماتنا التجارية</h2>
+            <p class="section-subtitle">أذرعنا التشغيلية وعلاماتنا التجارية التي تتكامل معاً لتقديم المفهوم الشامل لصناعة الضيافة والخدمات.</p>
+            
+            <div class="slider-outer-wrapper">
+                <!-- أزرار التحكم الجانبية بالأسهم -->
+                <button class="slider-arrow prev" id="brand-prev-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                <button class="slider-arrow next" id="brand-next-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                
+                <div class="slider-track-container" id="brand-slider-container">
+                    <div class="slider-track">
+                        <!-- لوغوهات فعلية وروابط أصلية مستخرجة كلياً -->
+                        <a href="#" class="brand-item-logo" title="الحسام المحدودة">
+                            <img src="https://i0.wp.com/siadholding.com/wp-content/uploads/2026/05/2026_Alhussam-LTD_Logo_Full-colour_Alhussam-Ltd_Logo_2024-Main-1-scaled.png?resize=300%2C300&ssl=1" alt="الحسام المحدودة">
+                        </a>
+                        <a href="http://alhussamumrah.com/" target="_blank" class="brand-item-logo" title="الحسام للسياحة">
+                            <img src="https://i0.wp.com/siadholding.com/wp-content/uploads/2024/10/AlhussamTourism_Main-Logo_1000px.png?resize=300%2C300&ssl=1" alt="الحسام للسياحة">
+                        </a>
+                        <a href="https://www.movenpick.com/en/middle-east/saudi-arabia/madinah/hotel-madinah-anwar.html" target="_blank" class="brand-item-logo" title="أنوار المدينة موفنبيك">
+                            <img src="https://i0.wp.com/siadholding.com/wp-content/uploads/2019/09/anwar_logo_1500px-1.jpg?resize=300%2C135&ssl=1" alt="أنوار المدينة">
+                        </a>
+                        <a href="https://fastbookings.co/" target="_blank" class="brand-item-logo" title="الحجوزات السريعة">
+                            <img src="https://i0.wp.com/siadholding.com/wp-content/uploads/2022/11/2022_Fast_Logo_Full-Colour_1200px-cropped.png?resize=300%2C152&ssl=1" alt="الحجوزات السريعة">
+                        </a>
+                        <a href="https://siadholding.com/wp-content/uploads/2026/01/Saja-By-Warwick-Logo_AR.png" target="_blank" class="brand-item-logo" title="فنادق سجى ورويك">
+                            <img src="https://i0.wp.com/siadholding.com/wp-content/uploads/2026/01/Saja-By-Warwick-Logo_EN-1.png?resize=300%2C300&ssl=1" alt="فنادق سجى ورويك">
+                        </a>
+                        <a href="#" class="brand-item-logo" title="أنوار المدينة مول">
+                            <img src="https://i0.wp.com/siadholding.com/wp-content/uploads/2022/03/2022_MALL_Anwar_Main-Logo_1920px.png?resize=300%2C300&ssl=1" alt="أنوار المدينة مول">
+                        </a>
+                        <a href="http://sajahospitality.com/" target="_blank" class="brand-item-logo" title="سجى لحلول الضيافة">
+                            <img src="https://i0.wp.com/siadholding.com/wp-content/uploads/2022/03/2021_Saja-Hospitality-Solutions_FINAL-LOGO_300px.jpg?resize=300%2C300&ssl=1" alt="سجى لحلول الضيافة">
+                        </a>
+                        <a href="#" class="brand-item-logo" title="مطعم المضيف">
+                            <img src="https://i0.wp.com/siadholding.com/wp-content/uploads/2022/03/Al_Modeef-removebg-preview.png?resize=300%2C214&ssl=1" alt="مطعم المضيف">
+                        </a>
+                        <a href="#" class="brand-item-logo" title="مطعم إكلة">
+                            <img src="https://i0.wp.com/siadholding.com/wp-content/uploads/2022/11/2022_EKLA_Inverted-Logo_Full-Colour_no-bg.png?resize=300%2C300&ssl=1" alt="إكلة">
+                        </a>
+                        <a href="#" class="brand-item-logo" title="Stayksa.com">
+                            <img src="https://i0.wp.com/siadholding.com/wp-content/uploads/2022/03/2021_StayKSA_logo-full-colour.png?resize=300%2C103&ssl=1" alt="Stayksa.com">
+                        </a>
+                        <a href="http://www.zaer.sa" target="_blank" class="brand-item-logo" title="شركة زائر للنقل">
+                            <img src="https://i0.wp.com/siadholding.com/wp-content/uploads/2026/05/ZAER-LOGO_2026-3.png?resize=300%2C106&ssl=1" alt="شركة زائر للنقل">
+                        </a>
+                        <a href="http://HFS" target="_blank" class="brand-item-logo" title="الحسام لخدمات التغذية">
+                            <img src="https://i0.wp.com/siadholding.com/wp-content/uploads/2025/01/2024_HFS_import-logo_new-1.png?resize=300%2C300&ssl=1" alt="الحسام لخدمات التغذية">
+                        </a>
+                        <a href="https://winsomeoutsourcing.com/" target="_blank" class="brand-item-logo" title="وينسوم لخدمات التعهيد">
+                            <img src="https://i0.wp.com/siadholding.com/wp-content/uploads/2022/03/2022_Winsome_FINAL-Logo_Full-Colour_1920px.png?resize=300%2C300&ssl=1" alt="وينسوم لخدمات التعهيد">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- العدادات الرقمية للشركة -->
+    <section class="mid-stats-section">
+        <div class="container mid-stats-grid">
+            <div>
+                <div class="mid-stat-num">690+</div>
+                <div class="mid-stat-label">موظف يعملون بشغف وتكامل</div>
+            </div>
+            <div>
+                <div class="mid-stat-num">13+</div>
+                <div class="mid-stat-label">علامة تجارية وكيان تشغيلي متميز</div>
+            </div>
+            <div>
+                <div class="mid-stat-num">67+</div>
+                <div class="mid-stat-label">عاماً من خدمة ورعاية ضيوف الرحمن</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم محاور التميز والالتزام بالرؤية -->
+    <section class="initiatives-section section-padding" id="initiatives">
+        <div class="container">
+            <h2 class="section-title">محاور تميزنا الاستراتيجي والتزامنا الوطني</h2>
+            <p class="section-subtitle">نوائم طاقاتنا التشغيلية وخبراتنا العريقة لدعم المحاور الرئيسية الثلاثة لرؤية السعودية 2030.</p>
+            
+            <div class="initiatives-grid">
+                <!-- مبادرة 1 -->
+                <div class="initiative-card">
+                    <div class="init-icon"><i class="fa-solid fa-people-roof"></i></div>
+                    <h4>مجتمع حيوي ومترابط</h4>
+                    <p>المساهمة بتمكين وحفاوة الاستقبال لضيوف الرحمن، وإثراء تجربتهم الدينية والثقافية منذ لحظة وصولهم للمملكة وحتى مغادرتهم بسلام.</p>
+                </div>
+
+                <!-- مبادرة 2 -->
+                <div class="initiative-card">
+                    <div class="init-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h4>اقتصاد مزدهر ومستدام</h4>
+                    <p>توليد فرص عمل رائدة، تنويع الاستثمار في قطاعات السياحة والضيافة، وتفعيل الشراكات لجذب الاستثمارات الأجنبية للقطاع الخاص.</p>
+                </div>
+
+                <!-- مبادرة 3 -->
+                <div class="initiative-card">
+                    <div class="init-icon"><i class="fa-solid fa-flag"></i></div>
+                    <h4>وطن طموح ومسؤول</h4>
+                    <p>تحقيق أعلى درجات الكفاءة الإدارية والتشغيلية، وتحسين جودة التدريب والخدمات لتوفير بيئة عمل جاذبة ومحفزة للمواهب المحلية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قالوا عنا (آراء وشهادات الشركاء والعملاء) لكسر الرتابة البصرية وتأكيد الموثوقية العاطفية -->
+    <section class="testimonials-section section-padding" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">قالوا عنّا</h2>
+            <p class="section-subtitle">نعتز بشهادات وثقة شركاء المسيرة والعملاء الذين رافقناهم بالخدمات والحلول المتكاملة.</p>
+            
+            <div class="testimonials-grid">
+                <!-- شهادة 1 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                    <p class="testimonial-text">"اتسم تعاوننا مع مجموعة الحسام وزائر للنقل بالدقة الفائقة والالتزام التام بالخطط الزمنية لتفويج الحجاج، مما يمنحنا الثقة الدائمة لتكرار الشراكة كل عام."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fa-solid fa-user-tie"></i></div>
+                        <div class="author-info">
+                            <h5>رئيس بعثة الحج</h5>
+                            <span>لجمهورية تركيا</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- شهادة 2 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                    <p class="testimonial-text">"قدمت لنا سجى لحلول الضيافة دراسات تشغيلية وهندسة قيمية ساهمت بشكل مباشر في تقليص التكاليف التشغيلية لفنادقنا بنسبة ملموسة، مع الحفاظ على أرقى معايير الخدمة."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fa-solid fa-user-tie"></i></div>
+                        <div class="author-info">
+                            <h5>عضو مجلس إدارة</h5>
+                            <span>مجموعة فنادق محلية</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- شهادة 3 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                    <p class="testimonial-text">"الاحترافية العالية في معايير السلامة الغذائية والقدرة على تموين آلاف الوجبات اليومية الساخنة لوفودنا جعلت من الحسام لخدمات التغذية شريكاً لا غنى عنه."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fa-solid fa-user-tie"></i></div>
+                        <div class="author-info">
+                            <h5>المدير التشغيلي</h5>
+                            <span>لشركة سياحة ووفادات دولية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- سلايدر تفاعلي أفقي مزود بأسهم تحكم يدوية للجهات المعتمدة وشركاء النجاح -->
+    <div class="slider-section-container">
+        <div class="container">
+            <h2 class="section-title">بوابة استكشاف شركاتنا التابعة</h2>
+            <p class="section-subtitle">نعتز بثقة متينة وشراكات استراتيجية موثوقة مع الجهات التنظيمية والكيانات الاستثمارية الرائدة.</p>
+            
+            <div class="slider-outer-wrapper">
+                <!-- أزرار التحكم الجانبية بالأسهم -->
+                <button class="slider-arrow prev" id="partner-prev-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                <button class="slider-arrow next" id="partner-next-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                
+                <div class="slider-track-container" id="partner-slider-container">
+                    <div class="slider-track">
+                        <!-- ركائز وشراكات معتمدة ومميزة بجودة عالية -->
+                        <div class="partner-item-badge" title="وزارة الحج والعمرة"><i class="fa-solid fa-landmark" style="font-size: 1.8rem;"></i></div>
+                        <div class="partner-item-badge" title="الهيئة السعودية للسياحة"><i class="fa-solid fa-building-columns" style="font-size: 1.8rem;"></i></div>
+                        <div class="partner-item-badge" title="الجهات الاستثمارية"><i class="fa-solid fa-file-shield" style="font-size: 1.8rem;"></i></div>
+                        <div class="partner-item-badge" title="شراكات لوجستية"><i class="fa-solid fa-handshake-angle" style="font-size: 1.8rem;"></i></div>
+                        
+                        <div class="partner-item-badge" title="وزارة الحج والعمرة"><i class="fa-solid fa-landmark" style="font-size: 1.8rem;"></i></div>
+                        <div class="partner-item-badge" title="الهيئة السعودية للسياحة"><i class="fa-solid fa-building-columns" style="font-size: 1.8rem;"></i></div>
+                        <div class="partner-item-badge" title="الجهات الاستثمارية"><i class="fa-solid fa-file-shield" style="font-size: 1.8rem;"></i></div>
+                        <div class="partner-item-badge" title="شراكات لوجستية"><i class="fa-solid fa-handshake-angle" style="font-size: 1.8rem;"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- قسم الشراكة واستقطاب الاستثمارات -->
+    <section class="lead-section section-padding" id="lead">
+        <div class="container lead-grid">
+            <div class="lead-info">
+                <h2>تطوير مستدام ووثوقية عالية</h2>
+                <p>إننا في سياد القابضة نحرص على توسيع شراكاتنا المستدامة مع المستثمرين والهيئات السياحية لتمكين المنشآت والارتقاء بأداء خدماتنا لتتماشى وتدعم رؤية السعودية 2030. تفضل بملء بيانات تواصلك لتحديد موعد مناقشة مشروع استثماري أو شراكة خدمية متكاملة.</p>
+                <div class="lead-features">
+                    <div class="lead-feature-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>قنوات استثمارية واعدة ومستقرة في المنطقتين المركزيتين بمكة والمدينة.</span>
+                    </div>
+                    <div class="lead-feature-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>إدارة عمليات وتوريد كاملة من منصات السفر إلى التسكين والتموين.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- نموذج تسجيل الشراكة -->
+            <div class="lead-form-container">
+                <h3>كن شريكاً في مسيرة التطوير والنمو</h3>
+                <form id="partner-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="الاسم الكريم" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="الجهة / اسم الشركة" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="البريد الإلكتروني المعتمد" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="رقم الهاتف (الواتس آب)" required>
+                        </div>
+                        <div class="form-group-full">
+                            <select class="form-control" required>
+                                <option value="" disabled selected hidden>نوع الشراكة / الاستثمار المستهدف</option>
+                                <option value="hotel">شراكة وتطوير منشآت فندقية</option>
+                                <option value="catering">تموين وإعاشة (عقود كبرى)</option>
+                                <option value="transport">تمثيل سياحي ونقل لوفود الحج والعمرة</option>
+                                <option value="investment">استثمار مالي / استشارات فندقية</option>
+                                <option value="other">أخرى</option>
+                            </select>
+                        </div>
+                        <div class="form-group-full">
+                            <textarea class="form-control" placeholder="نبذة مختصرة عن نوع الشراكة أو استفساركم..."></textarea>
+                        </div>
+                        <div class="form-group-full">
+                            <button type="submit" class="btn btn-gold" style="width: 100%;"><i class="fa-solid fa-paper-plane"></i> إرسال الطلب</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر المحسن بالكامل مع روابط تشغيلية مباشرة لتسهيل تدفق العملاء لعلاماتك الفرعية -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <div class="footer-logo-container">
+                    <img src="https://i.ibb.co/HLCj7V2H/image.png" alt="سياد القابضة | SIAD Holding">
+                </div>
+                <p>مجموعة رائدة متكاملة الخدمات في مجالات السفر والضيافة والتموين، نعمل بتفانٍ مستمد من إرثنا العريق وحوكمتنا الاحترافية لدعم ريادة المملكة في رعاية ضيوفها.</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/company/siadholding" class="social-btn" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <!-- روابط تشغيلية مباشرة للمواقع المحددة في ملفك لزيادة كفاءة التوجيه والتحويل -->
+            <div class="footer-col">
+                <h4>مواقع منصاتنا التشغيلية</h4>
+                <ul class="footer-links">
+                    <li><a href="http://alhussamumrah.com/" target="_blank"><i class="fa-solid fa-external-link" style="font-size: 0.75rem;"></i> الحسام للسياحة</a></li>
+                    <li><a href="http://www.zaer.sa" target="_blank"><i class="fa-solid fa-external-link" style="font-size: 0.75rem;"></i> شركة زائر للنقل</a></li>
+                    <li><a href="https://fastbookings.co/" target="_blank"><i class="fa-solid fa-external-link" style="font-size: 0.75rem;"></i> منصة الحجوزات السريعة</a></li>
+                    <li><a href="http://sajahospitality.com/" target="_blank"><i class="fa-solid fa-external-link" style="font-size: 0.75rem;"></i> سجى لحلول الضيافة</a></li>
+                    <li><a href="https://www.movenpick.com/en/middle-east/saudi-arabia/madinah/hotel-madinah-anwar.html" target="_blank"><i class="fa-solid fa-external-link" style="font-size: 0.75rem;"></i> فندق أنوار المدينة موفنبيك</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-contact">
+                <h4>تواصل معنا مباشرة</h4>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>٧٤٧٤ شارع الأمير سلطان, حي النهضة، جدة ٢٣٦١٥ - ٥٤٣٧، المملكة العربية السعودية</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+٩٦٦ ١٢ ٦٠٦ ٧٥٨٠</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>info@siadholding.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>© شركة سياد القابضة <span id="current-year">2025</span>. جميع الحقوق محفوظة.</p>
+            <div class="footer-bottom-links">
+                <a href="#">سياسة الخصوصية</a>
+                <a href="#">شروط الاستخدام</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // تفعيل الهيدر المنسدل في الشاشات الصغيرة للهواتف واللمس
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const servicesNavItem = document.getElementById('services-nav-item');
+        const servicesDropdownLink = document.getElementById('services-dropdown-link');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // تسهيل فتح الميجا منيو الفرعية على الجوال عن طريق الضغط (Click/Tap)
+        servicesDropdownLink.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault(); 
+                servicesNavItem.classList.toggle('open-mobile');
+            }
+        });
+
+        // إغلاق المنيو بمجرد الضغط على الروابط الفرعية لراحة المستخدم
+        document.querySelectorAll('.mega-item, .nav-link:not(#services-dropdown-link)').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                servicesNavItem.classList.remove('open-mobile');
+            });
+        });
+
+        // تحديث السنة تلقائياً للفوتر
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // تجربة تواصل واضحة وتفاعلية للنموذج
+        const partnerForm = document.getElementById('partner-form');
+        partnerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('نشكرك جزيلاً لثقتك واهتمامك بالتواصل مع سياد القابضة. تم استلام طلب الشراكة بنجاح، وسيتواصل معكم ممثل الإدارة التجارية المختص في أقرب وقت ممكن.');
+            partnerForm.reset();
+        });
+
+        /* --- برمجية الأكورديون الذكي المتوافق مع الجوال للركائز الست (الهيكل الأصلي) --- */
+        const ecoAccordion = document.getElementById('eco-accordion');
+        const ecoSteps = ecoAccordion.querySelectorAll('.eco-step');
+
+        ecoSteps.forEach(step => {
+            step.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    const isActive = step.classList.contains('active');
+                    ecoSteps.forEach(s => s.classList.remove('active'));
+                    if (!isActive) {
+                        step.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        /* --- برمجية التحكم بعرض المزيد لبطاقات الخدمات على الموبايل --- */
+        const toggleServicesBtn = document.getElementById('toggle-services-btn');
+        const serviceCards = document.querySelectorAll('#services-grid .service-card');
+
+        toggleServicesBtn.addEventListener('click', () => {
+            let isExpanded = false;
+
+            serviceCards.forEach((card, index) => {
+                if (index >= 3) {
+                    card.classList.toggle('expanded');
+                    if (card.classList.contains('expanded')) {
+                        isExpanded = true;
+                    }
+                }
+            });
+
+            if (isExpanded) {
+                toggleServicesBtn.innerHTML = 'عرض خدمات أقل <i class="fa-solid fa-minus"></i>';
+            } else {
+                toggleServicesBtn.innerHTML = 'عرض كافة الخدمات <i class="fa-solid fa-plus"></i>';
+                document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        /* --- برمجية السلايدرات والتحكم اليدوي بالأسهم (JavaScript Sliders) --- */
+        function initSlider(containerId, prevBtnId, nextBtnId) {
+            const container = document.getElementById(containerId);
+            const prevBtn = document.getElementById(prevBtnId);
+            const nextBtn = document.getElementById(nextBtnId);
+
+            const scrollAmount = 170; 
+
+            prevBtn.addEventListener('click', () => {
+                container.scrollBy({
+                    left: scrollAmount, 
+                    behavior: 'smooth'
+                });
+            });
+
+            nextBtn.addEventListener('click', () => {
+                container.scrollBy({
+                    left: -scrollAmount, 
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // تشغيل برمجية السلايدرات
+        initSlider('brand-slider-container', 'brand-prev-btn', 'brand-next-btn');
+        initSlider('partner-slider-container', 'partner-prev-btn', 'partner-next-btn');
+    </script>
+</body>
+</html>
